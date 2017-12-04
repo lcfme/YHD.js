@@ -162,6 +162,7 @@ Compiler.prototype = {
     },compileNodeElement:function(el){
         var attrs = el.attributes,
             self = this;
+        //NodeList(attrs)没有forEach方法，所以用数组的方法遍历
         [].forEach.call(attrs,function(attr){
             var name = attr.name,
                 exp = attr.value;
@@ -185,6 +186,7 @@ Compiler.prototype = {
 
 
         if(!content.match(reg)) return;//没有绑定数据，不处理
+        //创建文档碎片节点，避免因createElement多次添加到document.body引起的效率问题
         var fragment = document.createDocumentFragment();
 
         while(match = reg.exec(content)){
