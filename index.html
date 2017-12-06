@@ -47,7 +47,7 @@
                 a:{
                     b:"请输入"
                 },
-                message:"hello world!"
+                message:"hello world"
             },
             methods:{
                 clickBtn:function(message){
@@ -55,7 +55,10 @@
                 }
             }
         });
-
+/*
+*  第一次加载：对属性对象进行监听以及绑定，解析模版
+*  再次加载：当监听到对象发生变化的时候，触发解析模版
+*/
 </script>
 </body>
 </html>

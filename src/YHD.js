@@ -8,6 +8,7 @@ var YHD = function(options){
     compile(options.el,this);
 };
 
+
 YHD.prototype._proxy = function(data){
     //添加
     var self = this;
@@ -25,5 +26,4 @@ YHD.prototype._proxy = function(data){
         })(key);
 
     }
-
 };
